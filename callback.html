@@ -1,7 +1,36 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vision — connected</title>
-<style>body{max-width:720px;margin:40px auto;padding:0 20px;font:16px/1.6 -apple-system,Helvetica,Arial,sans-serif;color:#1b2230}code{background:#eef1f6;padding:2px 6px;border-radius:4px;word-break:break-all}</style></head><body>
-<h1>Vision — authorisation received</h1>
-<p>Copy this page's full address from the browser's address bar and paste it into the terminal where <code>vision auth</code> is waiting. Nothing is stored on this page; it only exists so the login can land somewhere.</p>
-<p id="hint"></p>
-<script>const p=new URLSearchParams(location.search);document.getElementById('hint').textContent=p.get('code')?'An authorisation code is present in the address. Paste the full URL now.':(p.get('error_description')||p.get('error')||'No code in the address — start the login again from the terminal.');</script>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authorisation received — Vision</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/vision-legal/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/vision-legal/favicon-32.png">
+<link rel="apple-touch-icon" href="/vision-legal/apple-touch-icon.png">
+<link rel="stylesheet" href="/vision-legal/style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="/vision-legal/"><img src="/vision-legal/icon-192.png" alt=""> Vision</a>
+  <nav><a href="/vision-legal/">Home</a></nav>
+</div></header>
+<section class="legal"><div class="wrap">
+  <h1>Authorisation received</h1>
+  <p id="hint"></p>
+  <p>This page is the redirect target for the owner's own sign-in. Copy the full address from the
+  browser's address bar and paste it into the terminal where the authorisation is waiting. Nothing
+  is stored here and no data is sent anywhere by this page.</p>
+</div></section>
+<footer><div class="wrap">
+  <span>© 2026 Vision. A personal publishing tool.</span>
+  <nav><a href="/vision-legal/privacy.html">Privacy</a><a href="/vision-legal/terms.html">Terms</a></nav>
+</div></footer>
+<script>
+const p=new URLSearchParams(location.search);
+document.getElementById('hint').textContent = p.get('code')
+  ? 'An authorisation code is present in the address. Paste the full URL now.'
+  : (p.get('error_description') || p.get('error') || 'No code in the address — start the sign-in again from the terminal.');
+</script>
+</body>
+</html>
